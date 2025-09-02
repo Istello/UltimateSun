@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <style>
+    /* Reset margins */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fullscreen video */
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      background-color: gold;
+    }
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Optional overlay text */
+    .loading-text {
+      position: relative;
+      color: white;
+      font-size: 2rem;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      z-index: 1;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background loading video ->
+  <video autoplay muted playsinline>
+    <source src="ultimatsun.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video-->
+
+  <!-- Loading text -->
+  <div class="loading-text">Loading...</div>
+
+  <script>
+    // Redirect after 5 seconds (adjust time in ms)
+    setTimeout(() => {
+      window.location.href = "ultimatesun.html";
+    }, 5000);
+  </script>
+</body>
+</html>
